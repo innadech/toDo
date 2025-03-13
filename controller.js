@@ -4,7 +4,7 @@ function handleTodo(currentTodo) {
   todos
   renderTaskListAll(todos)
   saveTodo(currentTodo)
-  saveTodos()
+  saveTodos(todos)
 }
 function handeLoadPage() {
   const todo = restoreTodo()
@@ -16,7 +16,7 @@ function handeLoadPage() {
 function handleDeleteTodo(valueTodo) {
   deleteTodo(valueTodo)
   todos
-  saveTodos()
+  saveTodos(todos)
 }
 
 handeLoadPage()
