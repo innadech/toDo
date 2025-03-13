@@ -6,7 +6,8 @@ function saveTodo(todo) {
 function restoreTodo() {
   const todoJson = localStorage.getItem('todo')
   const todo = JSON.parse(todoJson)
-  return todo
+  if (todo) return todo
+  return ''
 }
 
 function saveTodos(todos) {
@@ -17,5 +18,6 @@ function saveTodos(todos) {
 function restoreTodos() {
   const todosJson = localStorage.getItem('todos')
   const todos = JSON.parse(todosJson)
-  return todos
+  if (todos) return todos
+  return []
 }

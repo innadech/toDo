@@ -1,14 +1,12 @@
 let todo = ''
 let todos = []
 
-let idx = todos.indexOf([1])
+function setTodo(todoText) {
+  todo = todoText
+}
 
-idx
-
-todos[idx] = undefined
-
-function setTodo(currentTodo) {
-  todo = currentTodo
+function setTodos(todosList) {
+  todos = todosList
 }
 
 function addTodo() {
@@ -17,8 +15,9 @@ function addTodo() {
     todo = ''
   }
 }
-function deleteTodo(valueTodo) {
-  todos = todos.filter(str => str !== valueTodo)
+
+function deleteTodo(todoText) {
+  todos = todos.filter(str => str !== todoText)
 }
 
 // todos

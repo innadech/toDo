@@ -1,21 +1,27 @@
-function handleTodo(currentTodo) {
-  setTodo(currentTodo)
+function handleSetTodo(todo) {
+  setTodo(todo)
+  saveTodo(todo)
+}
+
+function handleAddTodo() {
   addTodo()
-  todos
-  renderTaskListAll(todos)
-  saveTodo(currentTodo)
+  saveTodo(todo)
   saveTodos(todos)
+  renderInputTodo(todo)
+  renderUlTodos(todos)
 }
+
 function handeLoadPage() {
-  const todo = restoreTodo()
-  console.log(todo)
-  renderTodoInput(todo)
-  const todos = restoreTodos()
-  renderTaskListAll(todos)
+  const restoredTodo = restoreTodo()
+  const restoredTodos = restoreTodos()
+  setTodo(restoredTodo)
+  setTodos(restoredTodos)
+  renderInputTodo(todo)
+  renderUlTodos(todos)
 }
+
 function handleDeleteTodo(valueTodo) {
   deleteTodo(valueTodo)
-  todos
   saveTodos(todos)
 }
 
